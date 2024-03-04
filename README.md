@@ -24,7 +24,7 @@ Ctrl-c Ctrl-c
 ## Upcoming mobile app
 
 - For indentifying person, if needed sometime:
-  - Fingerprint login
+  - Fingerprint login https://source.android.com/docs/security/features/biometric
   - Camera for face or passport identification
 
 ## More info
