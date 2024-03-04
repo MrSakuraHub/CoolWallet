@@ -21,6 +21,12 @@ make start
 Ctrl-c Ctrl-c
 ```
 
+## Upcoming mobile app
+
+- For indentifying person, if needed sometime:
+  - Fingerprint login
+  - Camera for face or passport identification
+
 ## More info
 
 See https://github.com/wekan/wekanstudio
