@@ -6,11 +6,7 @@
 ## Starting
 
 ```
-git clone https://github.com/wekan/wekanstudio
-
-cd wekanstudio
-
-make start
+./build.sh
 ```
 
 ## Stopping
