@@ -15,12 +15,7 @@ if test -f "$FINALFILE"; then
   rm "$FINALFILE"
 fi
 
-if [ ! -d wekanstudio ]; then
-  # Clone WeKan Studio repo.
-  git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
-fi
-
-# If replacing studio
+# If replacing Studio
 if [ "$1" == "studioreplace" ]; then
   echo "Replacing Studio"
   # Delete Studio
@@ -29,7 +24,7 @@ if [ "$1" == "studioreplace" ]; then
   git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
 fi
 
-# If wekanstudio does not exist, clone it
+# If Studio does not exist, download Studio
 if [ ! -d wekanstudio ]; then
   # Clone WeKan Studio repo.
   git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
