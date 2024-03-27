@@ -1,1 +1,0 @@
-local DBNAME = 'wekan.db'
