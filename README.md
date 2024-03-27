@@ -16,6 +16,7 @@
 ```
 ./build.sh studioreplace
 ```
+- This deletes all of Studio, downloads newest Studio, and builds CoolWallet.
 
 ## Running
 
