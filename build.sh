@@ -6,23 +6,11 @@
 # When running executeable, database wil be added to same directory,
 # if it does not exist yet.
 
-if command -v apt &> /dev/null
-then
-    echo "apt found"
-    exit 1
-fi
+git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
+(cd wekanstudio && make build FINALFILE=coolwallet.com && mv coolwallet.com .. && cd ..)
+rm -rf wekanstudio
 
-if command -v dnf &> /dev/null
-then
-    echo "dnf found"
-    exit 1
-fi
-
-if command -v brew &> /dev/null
-then
-    echo "brew found"
-    exit 1
-fi
-
-git clone https://
-
+echo "Build done."
+echo "   Double click coolwallet.com executeable at file manager."
+echo "   Or at terminal of Linux/Mac/BSD: ./coolwallet.com"
+echo "   Or at Windows CMD.EXE/PowerShell: coolwallet.com"
