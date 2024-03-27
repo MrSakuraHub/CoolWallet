@@ -8,6 +8,14 @@
 ```
 ./build.sh
 ```
+- If required files do not exist, they are downloaded.
+- If required files do exist, local build is done.
+
+## Replacing Studio with newest version
+
+```
+./build.sh studioreplace
+```
 
 ## Running
 
