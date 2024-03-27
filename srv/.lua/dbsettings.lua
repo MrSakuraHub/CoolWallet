@@ -1,0 +1,1 @@
+DBNAME = 'coolwallet.db'
