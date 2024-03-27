@@ -19,7 +19,9 @@ fi
 git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
 
 # Build CoolWallet.
-(cd wekanstudio && make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
+(cd wekanstudio && \
+  echo "DBNAME = 'coolwallet.db'" > srv/.lua/dbsettings.lua && \
+  make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 
 # Delete WeKan Studio
 rm -rf wekanstudio
