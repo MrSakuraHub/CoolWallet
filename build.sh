@@ -11,20 +11,24 @@ FINALFILE=coolwallet.com
 
 # If old executeable exists, delete it.
 if test -f "$FINALFILE"; then
-    echo "$FINALFILE exists. Deleting."
-    rm "$FINALFILE"
+  echo "$FINALFILE exists. Deleting."
+  rm "$FINALFILE"
 fi
 
-# Clone WeKan Studio repo.
-git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
+if [ "$1" == "studioreplace" ]; then
+  echo "Replacing Studio"
+  # Delete WeKan Studio
+  rm -rf wekanstudio
+  # Clone WeKan Studio repo.
+  git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
+  # Build CoolWallet.
+  (cd wekanstudio && \
+    echo "DBNAME = 'coolwallet.db'" > srv/.lua/dbsettings.lua && \
+    make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
+else
+  echo "Building with existing files"
+  (cd wekanstudio && \
+    make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
+fi
 
-# Build CoolWallet.
-(cd wekanstudio && \
-  echo "DBNAME = 'coolwallet.db'" > srv/.lua/dbsettings.lua && \
-  make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
-
-# Delete WeKan Studio
-rm -rf wekanstudio
-
-# Done
 echo "Build done."
