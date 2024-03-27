@@ -24,11 +24,11 @@ if [ "$1" == "studioreplace" ]; then
   # Build CoolWallet.
   (cd wekanstudio && \
     echo "DBNAME = 'coolwallet.db'" > srv/.lua/dbsettings.lua && \
-    make build FINALFILE="$FINALFILE" REPLACESTUDIO=true && mv "$FINALFILE" .. && cd ..)
+    make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 else
   echo "Building with existing files"
   (cd wekanstudio && \
-    make build FINALFILE="$FINALFILE" REPLACESTUDIO=false && mv "$FINALFILE" .. && cd ..)
+    make buildlocal FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 fi
 
 echo "Build done."
