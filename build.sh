@@ -33,17 +33,19 @@ fi
 # OLD:
 #   echo "DBNAME = 'coolwallet.db'" > srv/.lua/dbsettings.lua && \
 # NEW:
-#   Below "cp -pR ../srv/* ." does copy all files from CoolWallet to WeKan Studio, replacing files.
+#   Below does copy all files from CoolWallet srv directory to WeKan Studio, replacing files.
 
 if [ ! -f wekanstudio/redbean.com.template ]; then
   echo "Downloading missing files and and building:"
   (cd wekanstudio && \
     cp -pR ../srv/* . && \
+    cp -pR ../srv/.* . && \
     make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 else
   echo "Building with existing files:"
   (cd wekanstudio && \
     cp -pR ../srv/* . && \
+    cp -pR ../srv/.* . && \
     make buildlocal FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 fi
 
