@@ -3,10 +3,25 @@
 - CoolWallet is marketplace part of CatchApron product https://github.com/MrSakuraHub/CatchApron
 - CoolWallet is made with WeKan Studio web/app framework https://github.com/wekan/wekanstudio
 
-## Starting
+## Building
 
 ```
 ./build.sh
+```
+
+## Running
+
+a) Double click `coolwallet.com` at file manager
+
+b) At Windows CMD.EXE/PowerShell: `coolwallet.com`
+
+c) At terminal of Mac/Linux/BSD: `./coolwallet.com`
+
+If file is not executeable, make it executeable, and then run it:
+```
+chmod +x coolwallet.com"
+
+./coolwallet.com"
 ```
 
 ## Stopping
