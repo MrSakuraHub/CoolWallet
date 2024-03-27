@@ -17,7 +17,7 @@ b) At Windows CMD.EXE/PowerShell: `coolwallet.com`
 
 c) At terminal of Mac/Linux/BSD: `./coolwallet.com`
 
-If file is not executeable, make it executeable, and then run it:
+If file is not executeable, make it executeable, and run it:
 ```
 chmod +x coolwallet.com
 
