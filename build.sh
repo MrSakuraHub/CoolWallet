@@ -15,18 +15,33 @@ if test -f "$FINALFILE"; then
   rm "$FINALFILE"
 fi
 
-if [ "$1" == "studioreplace" ]; then
-  echo "Replacing Studio"
-  # Delete WeKan Studio
-  rm -rf wekanstudio
+if [ ! -d wekanstudio ]; then
   # Clone WeKan Studio repo.
   git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
-  # Build CoolWallet.
+fi
+
+# If replacing studio
+if [ "$1" == "studioreplace" ]; then
+  echo "Replacing Studio"
+  # Delete Studio
+  rm -rf wekanstudio
+  # Clone Studio
+  git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
+fi
+
+# If wekanstudio does not exist, clone it
+if [ ! -d wekanstudio ]; then
+  # Clone WeKan Studio repo.
+  git clone --branch main --depth 1 https://github.com/wekan/wekanstudio
+fi
+
+if [ ! -f wekanstudio/redbean.com.template ]; then
+  echo "Downloading missing files and and building:"
   (cd wekanstudio && \
     echo "DBNAME = 'coolwallet.db'" > srv/.lua/dbsettings.lua && \
     make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 else
-  echo "Building with existing files"
+  echo "Building with existing files:"
   (cd wekanstudio && \
     make buildlocal FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 fi
