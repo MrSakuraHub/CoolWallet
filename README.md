@@ -19,9 +19,9 @@ c) At terminal of Mac/Linux/BSD: `./coolwallet.com`
 
 If file is not executeable, make it executeable, and then run it:
 ```
-chmod +x coolwallet.com"
+chmod +x coolwallet.com
 
-./coolwallet.com"
+./coolwallet.com
 ```
 
 ## Stopping
