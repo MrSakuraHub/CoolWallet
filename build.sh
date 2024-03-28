@@ -39,12 +39,12 @@ fi
 if [ ! -f wekanstudio/redbean.com.template ]; then
   echo "Downloading missing files and and building:"
   (cd wekanstudio && \
-    rsync -aur --progress ../srv . && \
+    rsync -aur --progress ../srv/* srv/ && \
     make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 else
   echo "Building with existing files:"
   (cd wekanstudio && \
-    rsync -aur --progress ../srv . && \
+    rsync -aur --progress ../srv/* srv/ && \
     make buildlocal FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 fi
 
