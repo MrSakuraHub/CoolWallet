@@ -39,12 +39,14 @@ fi
 if [ ! -f wekanstudio/redbean.com.template ]; then
   echo "Downloading missing files and and building:"
   (cd wekanstudio && \
-    rsync -aur --progress ../srv/* srv/ && \
+    cp -pR ../srv/.lua/* srv/.lua/ && \
+    cp -pR ../srv/templates/* srv/templates/ && \
     make build FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 else
   echo "Building with existing files:"
   (cd wekanstudio && \
-    rsync -aur --progress ../srv/* srv/ && \
+    cp -pR ../srv/.lua/* srv/.lua/ && \
+    cp -pR ../srv/templates/* srv/templates/ && \
     make buildlocal FINALFILE="$FINALFILE" && mv "$FINALFILE" .. && cd ..)
 fi
 
