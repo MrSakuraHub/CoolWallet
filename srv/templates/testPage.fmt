@@ -1,7 +1,13 @@
+{% function block.content() %}
 
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
 
-<center>
+  <center>
+  
+  <h2>CoolWallet test page</h2>
 
-<h2>This is CoolWallet Test Page</h2>
-
-</center>
+  </center>
+  
+{% end %}
+{% render('layoutSignIn', {active_menu='singIn'}) %}
