@@ -1,3 +1,7 @@
+local fm = require "fullmoon"
+
+local util = require "util"
+
 function testPage(r)
   return fm.serveContent("testPage", {})
 end
