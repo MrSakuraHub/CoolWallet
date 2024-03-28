@@ -226,7 +226,7 @@ end
 
 -- CoolWallet Start
 
-function testPage(r)
+local function testPage(r)
   return fm.serveContent("testPage", {})
 end
 
